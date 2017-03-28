@@ -1,8 +1,8 @@
 <?php
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Extbase Sorter',
-    'description' => 'A simple extension for Sorting things',
+    'title' => 'SessionStorage Wrapper for Backend and Frontend',
+    'description' => 'A simple extension to have a consistent api to use TYPO3 Session in Backend and Frontend',
     'category' => 'plugin',
     'author' => 'Sebastian Schreiber',
     'author_email' => 'breakpoint@schreibersebastian.de',
@@ -23,12 +23,12 @@ $EM_CONF[$_EXTKEY] = [
     ],
     'autoload' => [
         'psr-4' => [
-            'Ssch\\ExtbaseSorter\\' => 'Classes',
+            'Ssch\\T3Session\\' => 'Classes',
         ],
     ],
     'autoload-dev' => [
         'psr-4' => [
-            'Ssch\\ExtbaseSorter\\Tests\\' => 'Tests',
+            'Ssch\\T3Session\\Tests\\' => 'Tests',
         ],
     ],
 ];

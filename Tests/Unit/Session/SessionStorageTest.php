@@ -15,13 +15,13 @@ namespace Ssch\T3Session\Tests\Unit\Session;
  * The TYPO3 project - inspiring people to share!
  */
 
+use PHPUnit_Framework_MockObject_MockObject;
+use Ssch\T3Session\Session\BackendSessionStorage;
+use Ssch\T3Session\Session\FrontendSessionStorage;
 use Ssch\T3Session\Session\SessionStorage;
+use TYPO3\CMS\Core\Tests\UnitTestCase;
 use TYPO3\CMS\Extbase\Object\ObjectManagerInterface;
 use TYPO3\CMS\Extbase\Service\EnvironmentService;
-use TYPO3\CMS\Core\Tests\UnitTestCase;
-use Ssch\T3Session\Session\FrontendSessionStorage;
-use Ssch\T3Session\Session\BackendSessionStorage;
-use PHPUnit_Framework_MockObject_MockObject;
 
 class SessionStorageTest extends UnitTestCase
 {
@@ -84,5 +84,4 @@ class SessionStorageTest extends UnitTestCase
 
         $object = new SessionStorage($this->objectManager, $this->environmentService);
     }
-
 }

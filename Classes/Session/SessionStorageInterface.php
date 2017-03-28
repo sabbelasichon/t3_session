@@ -15,8 +15,8 @@ namespace Ssch\T3Session\Session;
  *
  * The TYPO3 project - inspiring people to share!
  */
-use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
+use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Frontend\Authentication\FrontendUserAuthentication;
 
 interface SessionStorageInterface extends SingletonInterface
@@ -70,5 +70,4 @@ interface SessionStorageInterface extends SingletonInterface
      * @return string
      */
     public function getName();
-
 }

@@ -14,13 +14,11 @@ namespace Ssch\T3Session\Session;
  *
  * The TYPO3 project - inspiring people to share!
  */
-
-
+use BadMethodCallException;
+use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Extbase\Object\ObjectManagerInterface;
 use TYPO3\CMS\Extbase\Service\EnvironmentService;
 use TYPO3\CMS\Frontend\Authentication\FrontendUserAuthentication;
-use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
-use BadMethodCallException;
 
 class SessionStorage implements SessionStorageInterface
 {
@@ -62,7 +60,7 @@ class SessionStorage implements SessionStorageInterface
     {
         if ($this->environmentService->isEnvironmentInFrontendMode()) {
             $this->sessionStorage = $this->objectManager->get(FrontendSessionStorage::class);
-        } elseif($this->environmentService->isEnvironmentInBackendMode()) {
+        } elseif ($this->environmentService->isEnvironmentInBackendMode()) {
             $this->sessionStorage = $this->objectManager->get(BackendSessionStorage::class);
         } else {
             throw new BadMethodCallException('Only available in FE- or BE-Context.');
@@ -148,6 +146,4 @@ class SessionStorage implements SessionStorageInterface
     {
         return $this->sessionStorage->isSerialized($data);
     }
-
-
 }

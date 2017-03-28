@@ -54,5 +54,4 @@ abstract class AbstractSessionStorageTestCase extends UnitTestCase
             ['key', $array],
         ];
     }
-
 }

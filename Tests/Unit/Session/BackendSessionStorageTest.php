@@ -15,9 +15,9 @@ namespace Ssch\T3Session\Tests\Unit\Session;
  * The TYPO3 project - inspiring people to share!
  */
 
+use PHPUnit_Framework_MockObject_MockObject;
 use Ssch\T3Session\Session\BackendSessionStorage;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
-use PHPUnit_Framework_MockObject_MockObject;
 
 class BackendSessionStorageTest extends AbstractSessionStorageTestCase
 {
@@ -65,5 +65,4 @@ class BackendSessionStorageTest extends AbstractSessionStorageTestCase
         $this->user->expects($this->any())->method('getSessionData')->willReturn($value);
         $this->assertEquals($expected, $this->subject->read($key));
     }
-
 }

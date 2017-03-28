@@ -14,7 +14,6 @@ namespace Ssch\T3Session\Session;
  *
  * The TYPO3 project - inspiring people to share!
  */
-
 abstract class AbstractSessionStorage implements SessionStorageInterface
 {
 
@@ -32,7 +31,6 @@ abstract class AbstractSessionStorage implements SessionStorageInterface
     {
         $this->sessionNamespace = $sessionNamespace;
     }
-
 
     /**
      * Check whether the data is serializable or not
@@ -58,14 +56,14 @@ abstract class AbstractSessionStorage implements SessionStorageInterface
     public function isSerialized($data)
     {
         // if it isn't a string, it isn't serialized
-        if ( ! is_string($data)) {
+        if (! is_string($data)) {
             return false;
         }
         $data = trim($data);
         if ('N;' == $data) {
             return true;
         }
-        if ( ! preg_match('/^([adObis]):/', $data, $badions)) {
+        if (! preg_match('/^([adObis]):/', $data, $badions)) {
             return false;
         }
         switch ($badions[1]) {
@@ -88,7 +86,6 @@ abstract class AbstractSessionStorage implements SessionStorageInterface
         return false;
     }
 
-
     /**
      * @param string $key
      *
@@ -96,7 +93,7 @@ abstract class AbstractSessionStorage implements SessionStorageInterface
      */
     protected function getKey($key)
     {
-        return $this->sessionNamespace.$key;
+        return $this->sessionNamespace . $key;
     }
 
     /**
@@ -107,5 +104,4 @@ abstract class AbstractSessionStorage implements SessionStorageInterface
     {
         return $this->getUser()->name;
     }
-
 }

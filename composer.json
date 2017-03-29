@@ -48,7 +48,7 @@
   "scripts": {
     "post-autoload-dump": [
       "mkdir -p .Build/Web/typo3conf/ext/",
-      "[ -L .Build/Web/typo3conf/ext/t3_session ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/t3session"
+      "[ -L .Build/Web/typo3conf/ext/t3_session ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/t3_session"
     ]
   },
   "extra": {

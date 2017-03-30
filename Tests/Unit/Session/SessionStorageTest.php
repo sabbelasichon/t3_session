@@ -18,6 +18,7 @@ namespace Ssch\T3Session\Tests\Unit\Session;
 use PHPUnit_Framework_MockObject_MockObject;
 use Ssch\T3Session\Session\BackendSessionStorage;
 use Ssch\T3Session\Session\FrontendSessionStorage;
+use Ssch\T3Session\Session\NullSessionStorage;
 use Ssch\T3Session\Session\SessionStorage;
 use TYPO3\CMS\Core\Tests\UnitTestCase;
 use TYPO3\CMS\Extbase\Object\ObjectManagerInterface;
@@ -52,18 +53,6 @@ class SessionStorageTest extends UnitTestCase
 
     /**
      * @test
-     * @expectedException \BadMethodCallException
-     */
-    public function throwsExceptionDueToWrongEnvironment()
-    {
-        $this->environmentService->expects($this->once())->method('isEnvironmentInFrontendMode')->willReturn(false);
-        $this->environmentService->expects($this->once())->method('isEnvironmentInBackendMode')->willReturn(false);
-
-        $object = new SessionStorage($this->objectManager, $this->environmentService);
-    }
-
-    /**
-     * @test
      */
     public function createFrontendSessionStorage()
     {
@@ -81,6 +70,18 @@ class SessionStorageTest extends UnitTestCase
         $this->environmentService->expects($this->once())->method('isEnvironmentInFrontendMode')->willReturn(false);
         $this->environmentService->expects($this->once())->method('isEnvironmentInBackendMode')->willReturn(true);
         $this->objectManager->expects($this->once())->method('get')->with(BackendSessionStorage::class);
+
+        $object = new SessionStorage($this->objectManager, $this->environmentService);
+    }
+
+    /**
+     * @test
+     */
+    public function createNullSessionStorage()
+    {
+        $this->environmentService->expects($this->once())->method('isEnvironmentInFrontendMode')->willReturn(false);
+        $this->environmentService->expects($this->once())->method('isEnvironmentInBackendMode')->willReturn(false);
+        $this->objectManager->expects($this->once())->method('get')->with(NullSessionStorage::class);
 
         $object = new SessionStorage($this->objectManager, $this->environmentService);
     }

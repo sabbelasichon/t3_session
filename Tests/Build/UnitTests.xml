@@ -14,8 +14,8 @@
         verbose="false">
 
     <testsuites>
-        <testsuite name="EXT:t3session">
-            <directory>../Unit/</directory>            
+        <testsuite name="EXT:t3_session">
+            <directory>../Unit/</directory>
         </testsuite>
     </testsuites>
 </phpunit>

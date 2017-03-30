@@ -63,7 +63,7 @@ class SessionStorage implements SessionStorageInterface
         } elseif ($this->environmentService->isEnvironmentInBackendMode()) {
             $this->sessionStorage = $this->objectManager->get(BackendSessionStorage::class);
         } else {
-            throw new BadMethodCallException('Only available in FE- or BE-Context.');
+            $this->sessionStorage = $this->objectManager->get(NullSessionStorage::class);
         }
     }
 

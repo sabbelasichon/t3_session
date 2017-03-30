@@ -3,7 +3,7 @@
 $EM_CONF[$_EXTKEY] = [
     'title' => 'SessionStorage Wrapper for Backend and Frontend',
     'description' => 'A simple extension to have a consistent api to use TYPO3 Session in Backend and Frontend',
-    'category' => 'plugin',
+    'category' => 'misc',
     'author' => 'Sebastian Schreiber',
     'author_email' => 'breakpoint@schreibersebastian.de',
     'state' => 'beta',

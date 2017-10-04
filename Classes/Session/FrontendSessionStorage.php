@@ -21,7 +21,7 @@ class FrontendSessionStorage extends AbstractSessionStorage
 
     /**
      * @param string $key
-     * @param string $type
+     * @param string $type "type" is either "user" or "ses", which defines the data-space, user- data or session-data
      *
      * @return string
      */
@@ -32,19 +32,19 @@ class FrontendSessionStorage extends AbstractSessionStorage
 
     /**
      * @param string $key
-     * @param string $type
+     * @param string $type "type" is either "user" or "ses", which defines the data-space, user- data or session-data
      *
      * @return bool
      */
     public function has($key, $type = 'ses')
     {
-        return $this->getSessionData($key, $type) != '';
+        return $this->getSessionData($key, $type) !== '';
     }
 
     /**
      * @param string $key
      * @param mixed $data
-     * @param string $type
+     * @param string $type "type" is either "user" or "ses", which defines the data-space, user- data or session-data
      */
     public function write($key, $data = null, $type = 'ses')
     {
@@ -55,7 +55,7 @@ class FrontendSessionStorage extends AbstractSessionStorage
 
     /**
      * @param string $key
-     * @param string $type
+     * @param string $type "type" is either "user" or "ses", which defines the data-space, user- data or session-data
      */
     public function remove($key, $type = 'ses')
     {
@@ -75,7 +75,7 @@ class FrontendSessionStorage extends AbstractSessionStorage
 
     /**
      * @param string $key
-     * @param string $type
+     * @param string $type "type" is either "user" or "ses", which defines the data-space, user- data or session-data
      *
      * @return mixed
      */

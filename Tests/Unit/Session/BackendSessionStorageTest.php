@@ -27,10 +27,7 @@ class BackendSessionStorageTest extends AbstractSessionStorageTestCase
      */
     protected $subject;
 
-    /**
-     * @var BackendUserAuthentication|PHPUnit_Framework_MockObject_MockObject
-     */
-    protected $user;
+    protected ?array $user = null;
 
     /**
      * @return void

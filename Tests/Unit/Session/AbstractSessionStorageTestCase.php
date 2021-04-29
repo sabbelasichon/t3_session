@@ -3,6 +3,7 @@
 
 namespace Ssch\T3Session\Tests\Unit\Session;
 
+use stdClass;
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -26,7 +27,7 @@ abstract class AbstractSessionStorageTestCase extends UnitTestCase
      */
     public function getDataForRead()
     {
-        $object = new \stdClass();
+        $object = new stdClass();
         $object->key = 'value';
 
         $array = ['key' => 'value'];
@@ -43,7 +44,7 @@ abstract class AbstractSessionStorageTestCase extends UnitTestCase
      */
     public function getDataForHas()
     {
-        $object = new \stdClass();
+        $object = new stdClass();
         $object->key = 'value';
 
         $array = ['key' => 'value'];
